@@ -63,3 +63,35 @@ E:\Learning\Software_Test_Engineering_Academy\DnD Project\New_Version\Project\ba
 E:\Learning\Software_Test_Engineering_Academy\DnD Project\New_Version\Project\backend\obj\Debug\net8.0\webapiproj.pdb
 E:\Learning\Software_Test_Engineering_Academy\DnD Project\New_Version\Project\backend\obj\Debug\net8.0\webapiproj.genruntimeconfig.cache
 E:\Learning\Software_Test_Engineering_Academy\DnD Project\New_Version\Project\backend\obj\Debug\net8.0\ref\webapiproj.dll
+E:\Learning\dnd_project\backend\bin\Debug\net8.0\webapiproj.exe
+E:\Learning\dnd_project\backend\bin\Debug\net8.0\webapiproj.deps.json
+E:\Learning\dnd_project\backend\bin\Debug\net8.0\webapiproj.runtimeconfig.json
+E:\Learning\dnd_project\backend\bin\Debug\net8.0\webapiproj.dll
+E:\Learning\dnd_project\backend\bin\Debug\net8.0\webapiproj.pdb
+E:\Learning\dnd_project\backend\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+E:\Learning\dnd_project\backend\bin\Debug\net8.0\Microsoft.OpenApi.dll
+E:\Learning\dnd_project\backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\Learning\dnd_project\backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Learning\dnd_project\backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\webapiproj.csproj.AssemblyReference.cache
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\webapiproj.GeneratedMSBuildEditorConfig.editorconfig
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\webapiproj.AssemblyInfoInputs.cache
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\webapiproj.AssemblyInfo.cs
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\webapiproj.csproj.CoreCompileInputs.cache
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\webapiproj.MvcApplicationPartsAssemblyInfo.cs
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\webapiproj.MvcApplicationPartsAssemblyInfo.cache
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\webapiproj.sourcelink.json
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\staticwebassets.build.json
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\staticwebassets.development.json
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\staticwebassets\msbuild.webapiproj.Microsoft.AspNetCore.StaticWebAssets.props
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\staticwebassets\msbuild.build.webapiproj.props
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.webapiproj.props
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.webapiproj.props
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\staticwebassets.pack.json
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\scopedcss\bundle\webapiproj.styles.css
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\webapiproj.csproj.CopyComplete
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\webapiproj.dll
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\refint\webapiproj.dll
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\webapiproj.pdb
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\webapiproj.genruntimeconfig.cache
+E:\Learning\dnd_project\backend\obj\Debug\net8.0\ref\webapiproj.dll

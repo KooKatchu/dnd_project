@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Learning\\Software_Test_Engineering_Academy\\DnD Project\\New_Version\\Project\\backend\\webapiproj.csproj": {}
+    "E:\\Learning\\dnd_project\\backend\\webapiproj.csproj": {}
   },
   "projects": {
-    "E:\\Learning\\Software_Test_Engineering_Academy\\DnD Project\\New_Version\\Project\\backend\\webapiproj.csproj": {
+    "E:\\Learning\\dnd_project\\backend\\webapiproj.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Learning\\Software_Test_Engineering_Academy\\DnD Project\\New_Version\\Project\\backend\\webapiproj.csproj",
+        "projectUniqueName": "E:\\Learning\\dnd_project\\backend\\webapiproj.csproj",
         "projectName": "webapiproj",
-        "projectPath": "E:\\Learning\\Software_Test_Engineering_Academy\\DnD Project\\New_Version\\Project\\backend\\webapiproj.csproj",
+        "projectPath": "E:\\Learning\\dnd_project\\backend\\webapiproj.csproj",
         "packagesPath": "C:\\Users\\cat_e\\.nuget\\packages\\",
-        "outputPath": "E:\\Learning\\Software_Test_Engineering_Academy\\DnD Project\\New_Version\\Project\\backend\\obj\\",
+        "outputPath": "E:\\Learning\\dnd_project\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cat_e\\AppData\\Roaming\\NuGet\\NuGet.Config",
