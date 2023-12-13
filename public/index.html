@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json" />
+    <title>D&D</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            /* color-scheme: light dark; */
+            /* background-color: darkslategrey; */
+            background-image: url(Images/background2.jpg);
+            background-size: 50%;
+        }
+
+        body {
+            font-family: system-ui;
+            font-size: 1.125rem; /* 1.125 times the size of the root font-size (16px)*/
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        header nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            margin-left: 10px;
+            margin-bottom: -2px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        nav a {
+            background-color: darkgoldenrod;
+            border: 1px solid black;
+            padding: 5px;
+            margin-right: 5px;
+            font-weight: bold;
+            color: whitesmoke;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: black;
+            border: 1px solid darkgoldenrod;
+        }
+
+        /* Sets the width of the page to the minimum value of 100 characters, and/or 100% minus 4rem, whichever is smaller. */
+        main {
+            margin-inline: auto;
+            display: flex;
+        }
+
+        main h1 {
+            text-align: center;
+        }
+
+        #left-content, 
+        #right-content {
+            border: 1px solid rgb(59, 57, 59);
+            border-radius: 5px;
+            box-shadow: 5px 5px 2px #2525254a;
+            padding: 5px 10px;
+            margin: 5px;
+            background-color: #a9a9a940;
+        }
+
+        section#left-content {
+            position: relative;
+            width: 67%;
+            overflow-y: auto;
+            height: 88vh;
+        }
+
+        section#right-content {
+            position: fixed;
+            width: 25%;
+            right: 5px;
+        }
+
+        .mobile-nav {
+            display: none;
+        }
+
+
+        @media (max-width:  770px) {
+
+            main{
+                display: flex;
+                flex-direction: column;
+            }
+
+            section#left-content{
+                overflow-y: initial;
+                height: max-content;
+            }
+
+            section#left-content, 
+            section#right-content {
+                width: 93%;
+            }
+
+            section#right-content {
+                position: initial;
+            }
+
+            .mobile-nav {
+                display: inline;
+            }
+        }
+
+        #character-content,
+        #library-content,
+        #class-content,
+        #action-content,
+        #dm-content {
+            display: none;
+        }
+
+        section#home-content,
+        #character-content,
+        #library-content,
+        #class-content,
+        #action-content {
+            width: 100%;
+            margin-top: 4px;
+        }
+
+        section#class-content, section#action-content {
+            border: 1px solid #0000005c;
+        }
+
+        .content p {
+            padding: 10px;
+        }
+
+        .content img {
+            width: 50%;
+            margin: auto;
+        }
+
+        div#library-summary {
+            margin-top: 4px;
+        }
+
+        #library-content {
+            margin: 0;
+        }
+
+        #library-content nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: -1px;
+        }
+
+        #library_spells button,
+        #library_cantrips button,
+        #library_weapons button,
+        #library_bonus button {
+            margin-top: 0px;
+            font-size: 1.5rem;
+            border-radius: 15px;
+            background-color: #a356384a;
+            width: 30px;
+        }
+
+        .library_top_section {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            align-items: flex-start;
+            width: 100%;
+            padding: 5px 0;
+        }
+
+        .library_top_section h3 {
+            margin-left: 10px;
+        }
+
+        .spell-listing,
+        .cantrip-listing,
+        .weapon-listing,
+        .bonus-listing {
+            display: none;
+        }
+
+        section#library_spells,
+        section#library_cantrips, 
+        section#library_weapons, 
+        section#library_bonus { 
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .library-listing,
+        .App-header {
+            width: 45%;
+            border: 1px solid black;
+            margin: 5px;
+            padding: 5px;
+            background-color: #b5873414;
+            box-shadow: 2px 2px 5px #0000008a;
+        }
+
+        .App-header {
+            width: 95%;
+            margin: auto;
+        }
+
+        .library-listing p {
+            padding: 0;
+            font-size: 0.9rem;
+        }
+
+        #dndClasses button {
+            border: 1px solid antiquewhite;
+            padding: 5px 10px;
+            font-size: 1rem;
+            margin: 5px;
+            background-color: darkred;
+            color: whitesmoke;
+        }
+
+        #dndClasses button:hover {
+            background-color: antiquewhite;
+            border: 1px solid darkred;
+            color: darkred;
+        }
+
+        .profileInfo h1 {
+            font-size: 2rem;
+        }
+
+        
+        section#turnInfo {
+            padding: 0 10px;
+        }
+
+        #turnInfo ul {
+            list-style: '⚔ ';
+            padding: 0 0 0 10px;
+            list-style-position: outside;
+        }
+
+        #turnInfo a.mobile-nav {
+            color: whitesmoke;
+            text-align: center;
+            border-radius: 3px;
+            text-decoration: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            font-size: 1.5rem;
+        }
+
+        #diceRoller {
+            position: fixed;
+            bottom: 0;
+            background-color: whitesmoke;
+            border: 2px solid slategrey;
+            right: -365px;
+            width: 365px;
+            margin: 0;
+            transition: right 0.3s;
+            background-image: url(Images/dicebox.jpg);
+            background-size: 55%;
+        }
+
+        #diceRoller.open {
+            background-color: #666;
+            right: 0;
+        }
+
+        #diceRoller h3 {
+            color: black;
+            background-color: whitesmoke;
+            padding: 0 10px;
+            border-radius: 15px;
+        }
+
+        #rollerHeader h2 {
+            padding: 10px;
+            margin: 0;
+            text-align: center;
+            background: purple;
+            margin-bottom: 10px;
+        }
+
+        div#rollerBtns {
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+        }
+
+        #rollerBtns button {
+            margin: 0 5px;
+        }
+
+        #minimise {
+            position: relative;
+            right: 50px;
+            top: 100px;
+            transform: rotate(-90deg);
+        }
+
+        #fullDiceTray {
+            /* background-image: url(Images/dicetray.jpg); */
+            background-color: #330303;
+        }
+
+        #diceTray {
+            height: 150px;
+            background-color: rgba(0 0 0 / 23%);
+            border: 1px solid darkslategray;
+            list-style: none;
+            padding: 5px;
+            overflow-y: scroll;
+            color: whitesmoke;
+        }
+
+        #diceTray li {
+            font-size: 0.9rem;
+            border: 1px solid;
+            padding: 0 5px;
+            margin: 5px 0;
+            background-color: #1701176e;
+        }
+
+        #diceSelector {
+            background-image: url(Images/dicebox.jpg);
+            background-size: 55%;
+        }
+
+        #diceSelector ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #diceSelector li {
+            margin: 5px;
+        }
+
+        #diceSelector img {
+            width: 50px; /* Set a width for your button */
+            height: 50px; /* Set a height for your button */
+        }
+
+        #diceSelector button {
+            background: none;
+            border: none;
+            width: 50px;
+        }
+
+        /* .die img {
+            box-shadow: 3px 3px 3px;
+            border: 1px solid lightgray;
+        }
+
+        .die img:hover {
+            box-shadow: 3px 3px 3px orange;
+        } */
+        .die {
+            box-shadow: 3px 3px 3px;
+            border: 1px solid lightgray;
+        }
+
+        .die:hover {
+            box-shadow: 3px 3px 3px orange;
+        }
+
+        .die.invert {
+            box-shadow: inset 3px 3px 3px #023e3e;
+            border: 1px solid #242020;
+        }
+
+        .fail, 
+        .success {
+            font-weight: bolder;
+        }
+
+        .fail {
+            color: red;
+        }
+
+        .success {
+            color: green;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<header id="top">
+    <h1>Dungeons and Dragons Library</h1>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showContent('home-content')">Home</a></li>
+            <li><a href="#" onclick="showContent('library-content')">Library</a></li>
+            <li><a href="#" onclick="showContent('character-content')">Character</a></li>
+            <li><a href="#turnInfo" class="mobile-nav">On Your Turn</a></li>
+        </ul> 
+    </nav>
+</header>
+<main>
+    <section id="left-content">
+        <section class="content" id="home-content">
+            <img src="../Images/dnd.jpg">
+            <h2>Welcome to Dungeons and Dragons!</h2>
+            
+            <p>Dungeons and Dragons, is a captivating and imaginative tabletop role-playing game that has captured the hearts and minds of players worldwide since its inception in 1974. Created by Gary Gygax and Dave Arneson, D&D transcends traditional board games by inviting participants into a boundless realm of fantasy, where they assume the roles of unique characters in a collaborative storytelling experience. At its core, D&D is a game of creativity, strategy, and social interaction, where players embark on epic adventures, face mythical creatures, and unravel intricate plots crafted by a Dungeon Master.</p>
+
+            <p>Central to the D&D experience is the blend of structured gameplay and open-ended storytelling. Players use a set of polyhedral dice to determine the outcomes of their actions, adding an element of chance to the narrative. The game's rulebooks provide a comprehensive framework for character creation, combat, and exploration, but the true magic lies in the players' ability to shape the unfolding saga. Each participant's character, whether a valiant knight, cunning rogue, powerful wizard, or any other fantastical archetype, brings a unique set of skills and abilities to the party, fostering collaboration and camaraderie among players.</p>
+                
+            <p>D&D has become a cultural phenomenon, influencing literature, film, and video games. It has evolved over the years with various editions, each introducing new rules and settings while preserving the essence of storytelling and adventure. The game's enduring popularity can be attributed to its ability to transport players to imaginary worlds, where they can escape reality, exercise their creativity, and forge unforgettable memories with friends around the gaming table.</p>
+
+        </section>
+       
+        <section class="content" id="library-content">
+        <h2>Library</h2>
+        <div id="library-summary">
+            
+            <p>Welcome to the Dungeons and Dragons Library, a comprehensive compendium for adventurers eager to delve into the intricacies of character creation and gameplay. Within these shelves, an array of classes unfolds, showcasing the diverse roles heroes can play—from the arcane mastery of wizards to the stealthy prowess of rogues. Each class is meticulously detailed, providing players with the tools to craft characters with unique abilities and roles in their party.</p>
+            
+            <p>For magic enthusiasts, the library's section on spells and cantrips offers a rich tapestry of arcane wisdom. From elemental fury to subtle illusions, players can explore a vast array of magical incantations and gestures. The collection spans from simple cantrips to potent spells, allowing aspiring mages to shape the battlefield and unravel mysteries. The library also houses a detailed compendium on weapons, highlighting the diversity of arms and armor across the realms. From slashing swords to thunderous warhammers, adventurers can select the perfect armament for their character. The section on bonus actions explores the tactical choices available in combat, providing insights for players seeking to optimize their actions and gain an advantage.</p>
+            
+            <p>This Dungeons and Dragons Library is a beacon of enlightenment for adventurers at every level, offering guidance on character creation, magic, and combat strategy. As you embark on your journey through the realms of imagination and heroism, may these tomes be your trusted companions, unlocking the secrets that will shape your epic adventures.</p>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showLibraryContent('class-content')">Classes</a></li>
+                <li><a href="#" onclick="showLibraryContent('action-content')">Actions</a></li>
+                <li><a href="#" onclick="showLibraryContent('dm-content')">Dungeon Master</a></li>
+
+            </ul>
+        </nav>
+            <section class = "library-content" id="class-content">
+                <h2>Classes</h2>
+                <p>Dungeons & Dragons (D&D) classes serve as the foundation for character archetypes, each offering a distinct playstyle and set of abilities. The game boasts a diverse range of classes, including stalwart warriors like the Fighter, proficient in martial weaponry and armored combat; spellcasters such as the Wizard, wielding arcane forces to shape reality; and versatile Rogues, skilled in stealth and precision attacks. Clerics, drawing power from deities, provide healing and divine magic, while Druids commune with nature and transform into beasts. Martial prowess meets mystical might in the Paladin, while the Sorcerer's innate magic taps into raw arcane energy. The Bard blends magic and artistry, and Monks hone both body and mind for combat. The Warlock strikes pacts with otherworldly beings, and the Ranger excels in wilderness survival and archery. With each class offering a unique blend of skills, specializations, and thematic flavor, players navigate the Dungeons & Dragons universe by selecting a class that resonates with their preferred style of play, contributing to the collaborative storytelling experience that defines the game.</p>
+                
+                <div id="root"></div>
+                
+            </section>
+            
+            <section class = "library-content" id="action-content">
+                <h2>Actions</h2>
+
+                <p>
+                    Dungeons & Dragons actions are the heartbeat of the game, presenting players with a tapestry of possibilities that includes wielding weapons, casting spells, and employing strategic maneuvers. Characters can swing swords, shoot arrows, or unleash magical cantrips as part of their standard actions, engaging in the core mechanics of combat with the roll of a 20-sided die, or "d20." Spells, the arcane and divine manifestations of magic, offer a diverse array of effects ranging from healing allies to hurling destructive fireballs. Bonus actions add an extra layer of complexity, allowing characters to perform additional tasks in a turn, be it a quick dash or a secondary attack. The interplay of these key types of actions, from the precise strikes of weapons to the arcane mastery of spells and the swift efficiency of bonus actions, creates a dynamic and immersive experience where players shape their destinies within the fantastical realms of Dungeons & Dragons.</p>
+                
+                <section id="library_spells">
+                    <div class="library_top_section">
+                        <h3>Spells!</h3>
+                        <button type="button" id="spellsToggle" onclick="toggleSpells()">+</button>
+                    </div>
+                </section>
+                
+                <section id="library_cantrips">
+                    <div class="library_top_section">
+                        <h3>Cantrips!</h3>
+                        <button type="button" id="cantripsToggle" onclick="toggleCantrips()">+</button>
+                    </div>
+                </section>
+                
+                <section id="library_weapons">
+                    <div class="library_top_section">
+                        <h3>Weapons!</h3>
+                        <button type="button" id="weaponsToggle" onclick="toggleWeapons()">+</button>
+                    </div>
+                </section>
+                
+                <section id="library_bonus">
+                    <div class="library_top_section">
+                        <h3>Bonus Actions!</h3>
+                        <button type="button" id="bonusToggle" onclick="toggleBonus()">+</button>
+                    </div>
+                </section>
+            </section>
+            <section class = "library-content" id="dm-content">
+                <img src = "../Images/Dungeon-Master.jpg" alt = "A Dungeon Master" />
+                <h2>The Dungeon Master</h2>
+
+                <p>In Dungeons & Dragons , a Dungeon Master (DM) is the player who takes on the role of the game's storyteller, referee, and narrator. The DM is responsible for creating and guiding the fictional world in which the game is set, including its characters, settings, and events. They act as the primary facilitator of the game, controlling non-player characters (NPCs), describing environments, and adjudicating the rules.</p>
+            
+            <p>The DM's role is to present challenges, adventures, and opportunities for the player characters (PCs) to explore. They use rulebooks and their creativity to weave a narrative, responding dynamically to the choices and actions of the players. The DM also manages the game's mechanics, such as dice rolls, to determine the outcomes of various actions.</p>
+            
+            <p>A skilled DM is adept at improvisation, adapting to the unpredictable nature of player choices and ensuring that the game remains engaging and enjoyable for all participants. They strive to strike a balance between challenge and reward, creating a collaborative and immersive experience for the players.</p>
+
+            </section>            
+        </section>
+        
+        <section class="content" id="character-content">
+            <h2>Characters</h2>
+            
+            <p>In the world of Dungeons and Dragons, character creation is the gateway to immersive storytelling and epic adventures. Aspiring adventurers begin their journey by choosing a character class, each representing a unique archetype with distinct abilities and strengths. From the spellcasting prowess of wizards to the stealthy skills of rogues, players have the freedom to shape their characters in alignment with their preferred playstyle. The choice of race further adds depth to the character, influencing attributes and providing a rich backdrop to their personal narrative within the game.</p>
+            
+            <p>Beyond class and race, character creation delves into the finer details of background, alignment, and personal characteristics. Players sculpt the moral compass of their characters through alignment choices, ranging from the noble virtues of lawful good to the chaotic unpredictability of chaotic evil. Backgrounds offer a glimpse into a character's past life, providing skills, tools, and unique story hooks. These nuanced details contribute to the development of a fully realized persona, ensuring that each character is a dynamic and integral part of the adventuring party.</p>
+            
+            <p>The customization extends to ability scores, where players distribute points to define their character's strengths and weaknesses. Whether a charismatic bard, an agile ranger, or a sturdy barbarian, these choices shape the character's capabilities in both role-playing scenarios and thrilling combat encounters. In the collaborative spirit of Dungeons and Dragons, character creation becomes a shared journey, setting the stage for countless tales of heroism, camaraderie, and the unpredictable twists that arise when diverse characters join forces in pursuit of glory and treasure.</p>
+
+            <button type="button" id="characterCreationBtn" onclick="myCharacter.startCreation()">Start Character Creation</button>
+        </section>
+    </section>
+
+    <section id="right-content">
+        <section id="turnInfo">
+            <h3>On your turn:</h3>
+            <p>During initiative, or when exploring, you can do any of these during your turn:</p>
+            <ul>
+                <li>
+                    <p><b>Move</b></p>
+                </li>
+                <li>
+                    <p>Perform an <b>Action</b></p>
+                </li>
+                <li>
+                    <p>Perfom a <b>Bonus Action</b></p>
+                </li>
+                <li>
+                    <p><b>Use a Reaction</b> outside of your turn</p>
+                </li>
+                <li>
+                    <p><b>Freely interact</b> with an object, or draw/stow your weapon as part of your action or movement</p>
+                </li>
+                <li>
+                    <p><b>Talk</b> to a member of your party or an NPC as a free action</p>
+                </li>
+                <li>
+                    <p>Use an <b>Action</b> to perform a <b>Dodge</b>. Makes enemy attack at a <b>Disadvantage</b></p>
+                </li>
+                <li>
+                    <p><b>Ready</b> an action to take when a trigger you specify occurs</p>
+                </li>
+                <li>
+                    <p><b>Use a consumable</b> such as a health potion</p>
+                </li>
+                <li>
+                    <p><b>Help</b>  or assist an ally in performing a task such as an ability check or give them <b>Advantage</b> when attacking</p>
+                </li>
+                <li>
+                    <p>Use an <b>Action</b> to <b>Dash</b>, enabling you to travel twice your speed in one turn</p>
+                </li>
+                <li>
+                    <p>If a suitable location is available, you can use an <b>Action</b> to <b>Hide</b> and try and become unseen by enemies</p>
+                </li>
+            </ul>
+            <a href="#top" class="mobile-nav">🔝</a>
+          </section>
+
+          <section id="diceRoller">
+            <div id="rollerHeader">
+              <div id="rollerBtns">
+                  <button type="button" id="minimise" onclick="toggleDiceTray()">Open<br>Dice Tray</button>
+                  <h3>Dice Tray</h3>
+                  <button type="button" id="refresh" onclick="refreshDiceTray()" style="display: none;">Refresh &olarr;</button>
+              </div>  
+            </div>
+            <!-- <section id="fullDiceTray" style="display: none;"> -->
+            <section id="fullDiceTray">
+                <section id="diceTray"></section>
+  
+                <section id="diceSelector">
+                    <ul>
+                        <li><button type="button" id="d4" onclick="diceRoll(this, 1, 4)">
+                          <img src="../Images/icons/d4.svg"  class="die">
+                        </button></li>
+                        <li><button type="button" id="d6" onclick="diceRoll(this, 1, 6)">
+                          <img src="../Images/icons/perspective-dice-six-faces-six.svg"  class="die">
+                        </button></li>
+                        <li><button type="button" id="d8" onclick="diceRoll(this, 1, 8)">
+                          <img src="../Images/icons/dice-eight-faces-eight.svg"  class="die">
+                        </button></li>
+                        <li><button type="button" id="d10" onclick="diceRoll(this, 1, 10)">
+                          <img src="../Images/icons/d10.svg"  class="die">
+                        </button></li>
+                        <li><button type="button" id="d12" onclick="diceRoll(this, 1, 12)">
+                          <img src="../Images/icons/d12.svg"  class="die">
+                        </button></li>
+                        <li><button type="button" id="d20" onclick="diceRoll(this, 1, 20)">
+                          <img src="../Images/icons/dice-twenty-faces-twenty.svg"  class="die">
+                        </button></li>
+                    </ul>
+                </section>
+            </section>
+          </section>
+    </section>
+</main>
+
+    <!-- JavaScript -->
+    <script>
+
+        // Function to switch between each of the content sections
+
+        function showContent(id) {
+        // create a new variable targeting all items with the "content" class
+            const contents = document.querySelectorAll('.content'); 
+            const librarySummary = document.getElementById('library-summary');
+
+        // If the section if matches that of the id specified in the onclick event, set that section to display: block;. Else set display: none;
+            contents.forEach(content => {
+                if (content.id == id) {
+                    content.style.display = 'block';
+                } else {
+                    content.style.display = 'none';
+                }
+            });
+
+            librarySummary.style.display = 'block';
+        }
+
+        function showLibraryContent(id) {
+            const libraryContents = document.querySelectorAll('.library-content');
+            const librarySummary = document.getElementById('library-summary');
+
+            libraryContents.forEach(libraryContent => {
+                if (libraryContent.id == id) {
+                    libraryContent.style.display = 'block';
+                } else {
+                    libraryContent.style.display = 'none';
+                }
+            });
+
+            librarySummary.style.display = 'none';
+        }
+
+        // Change state of hide/show button for the library
+
+        function changeSpellsLibraryBtnState() {
+            const spellsToggle = document.getElementById('spellsToggle');
+
+            if (spellsToggle.innerText == '+') {
+                spellsToggle.innerText = '-';
+            } else {
+                spellsToggle.innerText = '+';
+            }
+
+        }
+
+        function changeCantripsLibraryBtnState() {
+            const cantripsToggle = document.getElementById('cantripsToggle');
+
+            if (cantripsToggle.innerText == '+') {
+                cantripsToggle.innerText = '-';
+            } else {
+                cantripsToggle.innerText = '+';
+            }
+        }
+        
+        function changeWeaponsLibraryBtnState() {
+            const weaponsToggle = document.getElementById('weaponsToggle');
+
+            if (weaponsToggle.innerText == '+') {
+                weaponsToggle.innerText = '-';
+            } else {
+                weaponsToggle.innerText = '+';
+            }
+        }
+        
+        function changeBonusLibraryBtnState() {
+            const bonusToggle = document.getElementById('bonusToggle');
+
+            if (bonusToggle.innerText == '+') {
+                bonusToggle.innerText = '-';
+            } else {
+                bonusToggle.innerText = '+';
+            }
+        }
+
+        // Toggle visibility of the Spells, Cantrips, Weapons, and Bonus Actions content
+        function toggleSpells() {
+            const spellListings = document.querySelectorAll('.spell-listing');
+
+            spellListings.forEach((spellListing) => {
+                spellListing.style.display = (spellListing.style.display === 'none' || spellListing.style.display === '') ? 'block' : 'none';
+                spellListing.classList.toggle('active');
+            });
+
+            // Run the changeLibraryBtnState function
+            changeSpellsLibraryBtnState();
+        }
+
+        function toggleCantrips() {
+            const cantripListings = document.querySelectorAll('.cantrip-listing');
+
+            cantripListings.forEach((cantripListing) => {
+                cantripListing.style.display = (cantripListing.style.display === 'none' || cantripListing.style.display === '') ? 'block' : 'none';
+                cantripListing.classList.toggle('active');
+            });
+
+            // Run the changeLibraryBtnState function
+            changeCantripsLibraryBtnState();
+        }
+        
+        function toggleWeapons() {
+            const weaponListings = document.querySelectorAll('.weapon-listing');
+
+            weaponListings.forEach((weaponListing) => {
+                weaponListing.style.display = (weaponListing.style.display === 'none' || weaponListing.style.display === '') ? 'block' : 'none';
+                weaponListing.classList.toggle('active');
+            });
+
+            // Run the changeLibraryBtnState function
+            changeWeaponsLibraryBtnState();
+        }
+        
+        function toggleBonus() {
+            const bonusListings = document.querySelectorAll('.bonus-listing');
+
+            bonusListings.forEach((bonusListings) => {
+                bonusListings.style.display = (bonusListings.style.display === 'none' || bonusListings.style.display === '') ? 'block' : 'none';
+                bonusListings.classList.toggle('active');
+            });
+
+            // Run the changeLibraryBtnState function
+            changeBonusLibraryBtnState();
+        }
+
+
+        // Dice tray functionality
+
+        // Change the contents of the open/close button
+        function changeBtnState () {
+            const diceBtn = document.getElementById('minimise');
+            if (diceBtn.innerText == 'Open\nDice Tray') {
+                diceBtn.innerText = 'Close\n Dice Tray';
+            } else {
+                diceBtn.innerText = 'Open\nDice Tray';
+            }
+
+        }
+
+        // Toggles the dice tray visibility
+        function toggleDiceTray() {
+            const clearTray = document.getElementById('refresh');
+
+            // Toggles the class 'active'
+            diceTray.classList.toggle('active');
+
+            clearTray.style.display = (clearTray.style.display === 'none' || clearTray.style.display === '') ? 'block' : 'none';
+            clearTray.classList.toggle('active');
+
+            const diceRollerElement = document.getElementById('diceRoller');
+            diceRollerElement.classList.toggle('open');
+
+            // Run the changeBtnState function
+            changeBtnState();
+        }
+
+        console.log('diceroller has been activated!');
+        
+        // Setup the dicerolling function using the min and max values as determined by the onclick event parameters (this, 1, 4)
+        function diceRoll(button, min, max) {
+            // Generate a random number between the min and max values of the button. Using Math.floor ensures a whole number is returned, when generating a random number. The Math.random result is then multiplied by the range specified by the button (eg, 1 - 4), with the minimum value added at the end ensuring the range starts from the specified minimum value (1)
+
+            let diceRoll = Math.floor(Math.random() * (max - min + 1)) + min;
+
+            // Log to the console the result of the roll, and include the button id within the string
+            console.log(`You rolled a ${diceRoll} using a ${button.id}!`);
+
+            // Create a new variable targeting the element with the diceTray id
+            const diceTray = document.getElementById('diceTray');
+
+            // Append to the diceTray element a new list item element displaying the string
+            diceTray.innerHTML += `
+            <li>You rolled a <b>${diceRoll}</b> using a <b>${button.id}</b>!</li>`
+
+            // Check if the roll is equal to 20, and the button id is "d20", if so add an additional li stating that it was a critical success!
+            if ((diceRoll == 20) && (button.id == "d20")) {
+                diceTray.innerHTML += `<li class="success">That's a critical success!</li>`
+            
+            // Or, if the button id is "d20" and the roll was equal to a 1, add an additional li stating that it was a critical failure
+            } else if ((diceRoll == 1) && (button.id == 'd20')) {
+                diceTray.innerHTML += `<li class="fail">Oh no! A critical failure!</li>`
+            }
+
+            diceTray.scrollTop = diceTray.scrollHeight;
+        }
+
+        // Create a new variable targeting all of the elements with the .die class
+        const dice = document.querySelectorAll('.die');
+
+        function onMouseDown() {
+            this.classList.add('invert');
+        }
+
+        function onMouseUp() {
+            this.classList.remove('invert');
+        }
+        // Iterate over each die element with 'dice' and add event listeners to each one
+        dice.forEach(function(die) {
+            // Add an event listener to the elements targeted above, and depending on the mouseenter/mouseleave state, add or remove the "invert" class
+            die.addEventListener('mousedown', onMouseDown);
+
+            die.addEventListener('mouseup', onMouseUp);
+        })
+
+        // Function to refresh the diceTray window
+        function refreshDiceTray() {
+            document.getElementById('diceTray').innerHTML = '';
+            diceTray.innerHTML += `<li>A nice fresh dice tray!</li>`;
+        }
+
+
+    </script>
+
+    <!-- C# -->
+
+    <script type="module">
+        const fetchOption = {
+            method: 'GET',
+            mode: 'cors',
+        }
+
+        const library = document.getElementById('library-content');
+        const library_spells = document.getElementById('library_spells');
+        const library_cantrips = document.getElementById('library_cantrips');
+        const library_weapons = document.getElementById('library_weapons');
+        const library_bonus = document.getElementById('library_bonus');
+
+        // const test_resp = await fetch('http://localhost:5090/api/games', fetchOption);
+        // const test_data = await test_resp.json();
+
+        // json api fetch with mulitple arrays within a single json file
+        // const resp = await fetch('data.json');
+        // const data = await resp.json();
+
+        // const spellsArray = data.spells;
+        // const cantripsArray = data.cantrips;
+
+        // const respSpells = await fetch('http://localhost:5090/api/actions/spells');
+        
+        // const dataSpells = await respSpells.json();
+
+        // const respCantrips = await fetch('http://localhost:5090/api/actions/cantrips');
+        // const dataCantrips = await respCantrips.json();
+        
+        // const respWeapons = await fetch('http://localhost:5090/api/actions/weapons');
+        // const dataWeapons = await respWeapons.json();
+        
+        // const respBonus = await fetch('http://localhost:5090/api/actions/bonus');
+        // const dataBonus = await respBonus.json();
+
+        const respSpells = await fetch('http://fb08.decoded.com:5090/api/actions/spells');
+        const dataSpells = await respSpells.json();
+
+        const respCantrips = await fetch('http://fb08.decoded.com:5090/api/actions/cantrips');
+        const dataCantrips = await respCantrips.json();
+        
+        const respWeapons = await fetch('http://fb08.decoded.com:5090/api/actions/weapons');
+        const dataWeapons = await respWeapons.json();
+        
+        const respBonus = await fetch('http://fb08.decoded.com:5090/api/actions/bonus');
+        const dataBonus = await respBonus.json();
+
+
+        const spellsArray = dataSpells;
+        const cantripsArray = dataCantrips;
+        const weaponsArray = dataWeapons;
+        const bonusArray = dataBonus;
+
+        for (const row of spellsArray) {
+            library_spells.innerHTML += createSpellListing(
+                row.name,
+                row.description,
+                row.level,
+                row.school,
+                row.castingTime,
+                row.range,
+                row.components,
+                row.duration,
+                row.classes,
+                row.source,
+                'spell'
+            );
+        }
+
+        for (const row of cantripsArray) {
+            library_cantrips.innerHTML += createCantripListing(
+                row.name,
+                row.description,
+                row.school,
+                row.castingTime,
+                row.range,
+                row.components,
+                row.duration,
+                row.classes,
+                row.source,
+                'cantrip'
+            );
+        }
+        
+        for (const row of weaponsArray) {
+            library_weapons.innerHTML += createWeaponListing(
+                row.name,
+                row.category,
+                row.damage,
+                row.damageDice,
+                row.modifier,
+                row.type,
+                row.properties,
+                row.range,
+                row.weight,
+                row.description,
+                row.source,
+                'weapon'
+            );
+        }
+
+        for (const row of bonusArray) {
+            library_bonus.innerHTML += createBonusListing(
+                row.name,
+                row.description,
+                row.classes,
+                'bonus'
+            );
+        }
+
+        function createSpellListing(title, description, level, school, casting, range, components, duration, classes, source, type) {
+            const template = 
+            `<div class="library-listing spell-listing">
+                <h4>Title: ${title}</h4>
+                <p><b>Description:</b> ${description}</p>
+                <p><b>Level:</b> ${level}</p>
+                <p><b>School:</b> ${school}</p>
+                <p><b>Casting Time:</b> ${casting}</p>
+                <p><b>Range:</b> ${range}</p>
+                <p><b>Components:</b> ${components}</p>
+                <p><b>Duration:</b> ${duration}</p>
+                <p><b>Class:</b> ${classes}</p>
+                <p><b>Source:</b> ${source}</p>
+            </div>`;
+
+            return template;
+        }
+
+        function createCantripListing(title, description, school, casting, range, components, duration, classes, source, type) {
+            const template = 
+            `<div class="library-listing cantrip-listing">
+                <h4>Title: ${title}</h4>
+                <p><b>Description:</b> ${description}</p>
+                <p><b>School:</b> ${school}</p>
+                <p><b>Casting Time:</b> ${casting}</p>
+                <p><b>Range:</b> ${range}</p>
+                <p><b>Components:</b> ${components}</p>
+                <p><b>Duration:</b> ${duration}</p>
+                <p><b>Class:</b> ${classes}</p>
+                <p><b>Source:</b> ${source}</p>
+            </div>`;
+
+            return template;
+        }
+
+        function createWeaponListing(title, category, damage, damageDice, modifier, type, properties, range, weight, description, source) {
+            const template = 
+            `<div class="library-listing weapon-listing">
+                <h4>Title: ${title}</h4>
+                <p><b>Description:</b> ${description}</p>
+                <p><b>Damage:</b> ${damage}</p>
+                <p><b>Damage Dice:</b> ${damageDice}</p>
+                <p><b>Modifier:</b> ${modifier}</p>
+                <p><b>Type:</b> ${type}</p>
+                <p><b>Properties:</b> ${properties}</p>
+                <p><b>Range:</b> ${range}</p>
+                <p><b>Weight:</b> ${weight}</p>
+                <p><b>Source:</b> ${source}</p>
+            </div>`;
+
+            return template;
+        }
+
+        function createBonusListing(title, description, classes) {
+            const template = 
+            `<div class="library-listing bonus-listing">
+                <h4>Title: ${title}</h4>
+                <p><b>Description:</b> ${description}</p>
+                <p><b>Class:</b> ${classes}</p>
+            </div>
+            `;
+
+            return template;
+        }
+    </script>
+</body>
+</html>
