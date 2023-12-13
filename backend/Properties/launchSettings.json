@@ -4,7 +4,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://fb08.decoded.com:63266",
+      "applicationUrl": "http://localhost:63266",
       "sslPort": 44391
     }
   },
@@ -14,7 +14,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "http://fb08.decoded.com:5090",
+      "applicationUrl": "http://localhost:5090",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -24,7 +24,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "http://fb08.decoded.com:7133;http://fb08.decoded.com:5090",
+      "applicationUrl": "https://localhost:7133;http://localhost:5090",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

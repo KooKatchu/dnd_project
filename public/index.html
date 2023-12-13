@@ -849,30 +849,30 @@
         // const spellsArray = data.spells;
         // const cantripsArray = data.cantrips;
 
-        // const respSpells = await fetch('http://localhost:5090/api/actions/spells');
+        const respSpells = await fetch('http://localhost:5090/api/actions/spells');
         
-        // const dataSpells = await respSpells.json();
-
-        // const respCantrips = await fetch('http://localhost:5090/api/actions/cantrips');
-        // const dataCantrips = await respCantrips.json();
-        
-        // const respWeapons = await fetch('http://localhost:5090/api/actions/weapons');
-        // const dataWeapons = await respWeapons.json();
-        
-        // const respBonus = await fetch('http://localhost:5090/api/actions/bonus');
-        // const dataBonus = await respBonus.json();
-
-        const respSpells = await fetch('http://fb08.decoded.com:5090/api/actions/spells');
         const dataSpells = await respSpells.json();
 
-        const respCantrips = await fetch('http://fb08.decoded.com:5090/api/actions/cantrips');
+        const respCantrips = await fetch('http://localhost:5090/api/actions/cantrips');
         const dataCantrips = await respCantrips.json();
         
-        const respWeapons = await fetch('http://fb08.decoded.com:5090/api/actions/weapons');
+        const respWeapons = await fetch('http://localhost:5090/api/actions/weapons');
         const dataWeapons = await respWeapons.json();
         
-        const respBonus = await fetch('http://fb08.decoded.com:5090/api/actions/bonus');
+        const respBonus = await fetch('http://localhost:5090/api/actions/bonus');
         const dataBonus = await respBonus.json();
+
+        // const respSpells = await fetch('http://fb08.decoded.com:5090/api/actions/spells');
+        // const dataSpells = await respSpells.json();
+
+        // const respCantrips = await fetch('http://fb08.decoded.com:5090/api/actions/cantrips');
+        // const dataCantrips = await respCantrips.json();
+        
+        // const respWeapons = await fetch('http://fb08.decoded.com:5090/api/actions/weapons');
+        // const dataWeapons = await respWeapons.json();
+        
+        // const respBonus = await fetch('http://fb08.decoded.com:5090/api/actions/bonus');
+        // const dataBonus = await respBonus.json();
 
 
         const spellsArray = dataSpells;
