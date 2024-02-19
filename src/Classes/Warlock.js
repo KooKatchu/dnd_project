@@ -10,20 +10,20 @@ const Warlock = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const cantrips = await fetch("http://fb08.decoded.com:5090/api/actions/cantrips");
+        const cantrips = await fetch("cantrips.json");
         const cantripsData = await cantrips.json();
 
         // Filter cantrips for the Warlock class
         const warlockCantrips = cantripsData.filter(cantrip => cantrip.classes.includes("Warlock"));
         setWarlockCantrips(warlockCantrips);
 
-        const spell = await fetch("http://fb08.decoded.com:5090/api/actions/spells");
+        const spell = await fetch("spells.json");
         const spellData = await spell.json();
 
         const warlockSpells = spellData.filter(spell => spell.classes.includes("Warlock"));
         setWarlockSpells(warlockSpells);
 
-        const bonus = await fetch("http://fb08.decoded.com:5090/api/actions/bonus");
+        const bonus = await fetch("bonus.json");
         const bonusData = await bonus.json();
         const warlockBonus = bonusData.filter(bonus => bonus.class.includes("Warlock"));
         setWarlockBonus(warlockBonus);
