@@ -1,0 +1,272 @@
+[
+  {
+    "bonusActionId": 1,
+    "name": "Cunning Action",
+    "class": "Rogue",
+    "description": "As a bonus action, you can take the Dash, Disengage, or Hide action on your turn."
+  },
+  {
+    "bonusActionId": 2,
+    "name": "Fury of Blows",
+    "class": "Monk",
+    "description": "As a bonus action, you can make two unarmed strikes after taking the Attack action."
+  },
+  {
+    "bonusActionId": 3,
+    "name": "Second Wind",
+    "class": "Fighter",
+    "description": "As a bonus action, you can regain hit points equal to 1d10 + your fighter level once per short or long rest."
+  },
+  {
+    "bonusActionId": 4,
+    "name": "Divine Smite",
+    "class": "Paladin",
+    "description": "As a bonus action, you can expend spell slots to deal extra radiant damage on a successful melee attack."
+  },
+  {
+    "bonusActionId": 5,
+    "name": "Wild Shape",
+    "class": "Druid",
+    "description": "As a bonus action, you can transform into a beast form that you have seen before."
+  },
+  {
+    "bonusActionId": 6,
+    "name": "Rage",
+    "class": "Barbarian",
+    "description": "As a bonus action, you can enter a state of rage, gaining advantages on Strength checks and saving throws, and dealing extra damage with melee weapons."
+  },
+  {
+    "bonusActionId": 7,
+    "name": "Hexblade's Curse",
+    "class": "Warlock",
+    "description": "As a bonus action, you can curse a target, gaining bonus damage against them and regaining hit points when they die."
+  },
+  {
+    "bonusActionId": 8,
+    "name": "Flurry of Blows",
+    "class": "Monk",
+    "description": "As a bonus action, you can make two unarmed strikes after taking the Attack action."
+  },
+  {
+    "bonusActionId": 9,
+    "name": "Misty Step",
+    "class": "Wizard",
+    "description": "As a bonus action, you can teleport up to 30 feet to an unoccupied space that you can see."
+  },
+  {
+    "bonusActionId": 10,
+    "name": "Sneak Attack",
+    "class": "Rogue",
+    "description": "As a bonus action, you can deal extra damage to a creature you hit with an attack if you have advantage on the attack roll."
+  },
+  {
+    "bonusActionId": 11,
+    "name": "Ki Points",
+    "class": "Monk",
+    "description": "As a bonus action, you can spend ki points to activate various abilities such as Patient Defense or Step of the Wind."
+  },
+  {
+    "bonusActionId": 12,
+    "name": "Action Surge",
+    "class": "Fighter",
+    "description": "As a bonus action, you can take an additional action on your turn, once per short or long rest."
+  },
+  {
+    "bonusActionId": 13,
+    "name": "Lay on Hands",
+    "class": "Paladin",
+    "description": "As a bonus action, you can restore a number of hit points to yourself or an ally, up to your paladin level times 5."
+  },
+  {
+    "bonusActionId": 14,
+    "name": "Shillelagh",
+    "class": "Druid",
+    "description": "As a bonus action, you can imbue a club or quarterstaff with magical power, using your spellcasting ability for attack and damage rolls."
+  },
+  {
+    "bonusActionId": 15,
+    "name": "Evasion",
+    "class": "Rogue",
+    "description": "As a bonus action, you can dodge out of the way of certain area effects, such as a red dragon's fiery breath or an ice storm spell."
+  },
+  {
+    "bonusActionId": 16,
+    "name": "Reckless Attack",
+    "class": "Barbarian",
+    "description": "As a bonus action, you can throw aside all concern for defense to attack with fierce desperation. Gain advantage on melee weapon attack rolls, but attacks against you have advantage until your next turn."
+  },
+  {
+    "bonusActionId": 17,
+    "name": "Mystic Arcanum",
+    "class": "Warlock",
+    "description": "As a bonus action, you can cast a higher-level spell that you have gained through your Pact Boon feature."
+  },
+  {
+    "bonusActionId": 18,
+    "name": "Patient Defense",
+    "class": "Monk",
+    "description": "As a bonus action, you can take the Dodge action until the start of your next turn."
+  },
+  {
+    "bonusActionId": 19,
+    "name": "Fighting Style",
+    "class": "Fighter",
+    "description": "As a bonus action, you can adopt a particular fighting style, such as Defense, Dueling, or Great Weapon Fighting, gaining special benefits related to that style."
+  },
+  {
+    "bonusActionId": 20,
+    "name": "Hex",
+    "class": "Warlock",
+    "description": "As a bonus action, you can curse a creature, dealing extra damage when you hit it with an attack."
+  },
+  {
+    "bonusActionId": 21,
+    "name": "Thunderous Smite",
+    "class": "Paladin",
+    "description": "As a bonus action, you can imbue your weapon with thunderous energy, dealing extra damage and pushing the target away on a successful hit."
+  },
+  {
+    "bonusActionId": 22,
+    "name": "Wild Surge",
+    "class": "Sorcerer",
+    "description": "As a bonus action, you can roll on the Wild Magic Surge table after casting a sorcerer spell of 1st level or higher."
+  },
+  {
+    "bonusActionId": 23,
+    "name": "Invoke Duplicity",
+    "class": "Trickery Domain Cleric",
+    "description": "As a bonus action, you can create an illusory duplicate of yourself to distract enemies and cast spells from a different location."
+  },
+  {
+    "bonusActionId": 24,
+    "name": "Rage",
+    "class": "Barbarian",
+    "description": "As a bonus action, you can enter a state of rage, gaining advantages on Strength checks and saving throws, and dealing extra damage with melee weapons."
+  },
+  {
+    "bonusActionId": 25,
+    "name": "Bardic Inspiration",
+    "class": "Bard",
+    "description": "As a bonus action, you can inspire others through stirring words or music, granting them an inspiration die to add to ability checks, attack rolls, or saving throws."
+  },
+  {
+    "bonusActionId": 26,
+    "name": "Stunning Strike",
+    "class": "Monk",
+    "description": "As a bonus action, you can spend ki points to attempt to stun a creature you hit with a melee weapon attack."
+  },
+  {
+    "bonusActionId": 27,
+    "name": "Channel Divinity: Turn Undead",
+    "class": "Cleric",
+    "description": "As a bonus action, you can use your Channel Divinity to force undead creatures within 30 feet of you to make a Wisdom saving throw or be turned."
+  },
+  {
+    "bonusActionId": 28,
+    "name": "Spiritual Weapon",
+    "class": "Cleric",
+    "description": "As a bonus action, you can create a floating, spectral weapon that attacks on your behalf as a spell."
+  },
+  {
+    "bonusActionId": 29,
+    "name": "Shadow Blade",
+    "class": "Sorcerer",
+    "description": "As a bonus action, you can create a sword of shadow that deals psychic damage and has finesse, light, and thrown properties."
+  },
+  {
+    "bonusActionId": 30,
+    "name": "Commanding Strike",
+    "class": "Fighter (Battle Master)",
+    "description": "As a bonus action, you can forgo one of your attacks to allow an ally to make an attack with their reaction and add your superiority die to the damage."
+  },
+  {
+    "bonusActionId": 31,
+    "name": "Arcane Recovery",
+    "class": "Wizard",
+    "description": "As a bonus action, you can recover expended spell slots during a short rest, up to a combined level of half your wizard level."
+  },
+  {
+    "bonusActionId": 32,
+    "name": "Misty Step",
+    "class": "Wizard",
+    "description": "As a bonus action, you can teleport up to 30 feet to an unoccupied space that you can see."
+  },
+  {
+    "bonusActionId": 33,
+    "name": "Expeditious Retreat",
+    "class": "Wizard",
+    "description": "As a bonus action, you can cast Expeditious Retreat, allowing you to dash as a bonus action for the duration."
+  },
+  {
+    "bonusActionId": 34,
+    "name": "Shadow Blade",
+    "class": "Wizard",
+    "description": "As a bonus action, you can create a sword of shadow that deals psychic damage and has finesse, light, and thrown properties."
+  },
+  {
+    "bonusActionId": 35,
+    "name": "Teleportation Circle",
+    "class": "Wizard",
+    "description": "As a bonus action, you can use this spell to teleport yourself and others to a permanent teleportation circle."
+  },
+  {
+    "bonusActionId": 36,
+    "name": "Divine Favor",
+    "class": "Paladin",
+    "description": "As a bonus action, you can call on your deity to empower your attacks, granting you bonus damage on weapon attacks."
+  },
+  {
+    "bonusActionId": 37,
+    "name": "Step of the Wind",
+    "class": "Monk",
+    "description": "As a bonus action, you can spend ki points to take the Disengage or Dash action, and your jump distance is doubled for the turn."
+  },
+  {
+    "bonusActionId": 38,
+    "name": "Blessing of the Trickster",
+    "class": "Cleric (Trickery Domain)",
+    "description": "As a bonus action, you can grant advantage on Stealth checks to an ally within 30 feet."
+  },
+  {
+    "bonusActionId": 39,
+    "name": "Martial Arts",
+    "class": "Monk",
+    "description": "As a bonus action, you can make an unarmed strike or use a monk weapon after taking the Attack action."
+  },
+  {
+    "bonusActionId": 40,
+    "name": "Enrage",
+    "class": "Barbarian",
+    "description": "As a bonus action, you can enter a state of rage, gaining advantages on Strength checks and saving throws, and dealing extra damage with melee weapons."
+  },
+  {
+    "bonusActionId": 41,
+    "name": "Eldritch Blade",
+    "class": "Warlock",
+    "description": "You evoke a arcane blade in your free hand. The blade is similar in size and shape to a katana, and it lasts for the duration."
+  },
+  {
+    "bonusActionId": 42,
+    "name": "Step of the Wind",
+    "class": "Monk",
+    "description": "As a bonus action, you can spend ki points to take the Disengage or Dash action, and your jump distance is doubled for the turn."
+  },
+  {
+    "bonusActionId": 43,
+    "name": "Rally",
+    "class": "Fighter (Battle Master)",
+    "description": "As a bonus action, you can inspire an ally, granting them temporary hit points."
+  },
+  {
+    "bonusActionId": 44,
+    "name": "Arcane Ward",
+    "class": "Wizard",
+    "description": "As a bonus action, you can create an arcane ward that absorbs damage, protecting you from harm."
+  },
+  {
+    "bonusActionId": 45,
+    "name": "Bladesong",
+    "class": "Wizard (Bladesinging Tradition)",
+    "description": "As a bonus action, you can enter a state of bladesong, gaining benefits to your AC, concentration saves, and movement speed."
+  }
+]
