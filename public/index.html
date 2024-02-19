@@ -839,42 +839,17 @@
         const library_weapons = document.getElementById('library_weapons');
         const library_bonus = document.getElementById('library_bonus');
 
-        // const test_resp = await fetch('http://localhost:5090/api/games', fetchOption);
-        // const test_data = await test_resp.json();
-
-        // json api fetch with mulitple arrays within a single json file
-        // const resp = await fetch('data.json');
-        // const data = await resp.json();
-
-        // const spellsArray = data.spells;
-        // const cantripsArray = data.cantrips;
-
+        // "API" files
         const respSpells = await fetch('spells.json');
-        
         const dataSpells = await respSpells.json();
-
         const respCantrips = await fetch('cantrips.json');
-        const dataCantrips = await respCantrips.json();
-        
+        const dataCantrips = await respCantrips.json();      
         const respWeapons = await fetch('weapons.json');
-        const dataWeapons = await respWeapons.json();
-        
+        const dataWeapons = await respWeapons.json();       
         const respBonus = await fetch('bonus.json');
         const dataBonus = await respBonus.json();
 
-        // const respSpells = await fetch('http://fb08.decoded.com:5090/api/actions/spells');
-        // const dataSpells = await respSpells.json();
-
-        // const respCantrips = await fetch('http://fb08.decoded.com:5090/api/actions/cantrips');
-        // const dataCantrips = await respCantrips.json();
-        
-        // const respWeapons = await fetch('http://fb08.decoded.com:5090/api/actions/weapons');
-        // const dataWeapons = await respWeapons.json();
-        
-        // const respBonus = await fetch('http://fb08.decoded.com:5090/api/actions/bonus');
-        // const dataBonus = await respBonus.json();
-
-
+        // Data arrays
         const spellsArray = dataSpells;
         const cantripsArray = dataCantrips;
         const weaponsArray = dataWeapons;
